@@ -22,7 +22,7 @@ async function main() {
   if (fileCount == 0) {
     console.log("No filename in directory matching pattern: " + args._[0]);
   } else if (args.del) {
-    deleteFiles(matchedFiles.map((filename) => resolve(filename)));
+    deleteFiles(matchedFiles.map((filename) => path.resolve(filename)));
     logEffect();
   } else if (args.remhd) {
     renameFiles(matchedFiles, args.remhd, pattern);
